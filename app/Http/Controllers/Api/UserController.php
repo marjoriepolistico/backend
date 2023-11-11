@@ -42,50 +42,50 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    // public function update(UserRequest $request, string $id)
-    // {
-    //     $user = User::findOrFail($id);
+    public function update(UserRequest $request, string $id)
+    {
+        $user = User::findOrFail($id);
 
-    //     $validated = $request->validated();
- 
-    //     $user->name = $validated['name'];
-          
-    //     $user->save();
+        $validated = $request->validated();
 
-    //     return $user;
-    // }
+        $user->name = $validated['name'];
 
-    /**
+        $user->save();
+
+        return $user;
+    }
+
+    /* *
      * Update the email of the specified resource in storage.
      */
-    // public function email(UserRequest $request, string $id)
-    // {
-    //     $user = User::findOrFail($id);
+    public function email(UserRequest $request, string $id)
+    {
+        $user = User::findOrFail($id);
 
-    //     $validated = $request->validated();
- 
-    //     $user->email = $validated['email'];
-         
-    //     $user->save();
+        $validated = $request->validated();
 
-    //     return $user;
-    // }
+        $user->email = $validated['email'];
+
+        $user->save();
+
+        return $user;
+    }
 
     /**
      * Update the password of the specified resource in storage.
      */
-    // public function password(UserRequest $request, string $id)
-    // {
-    //     $user = User::findOrFail($id);
+    public function password(UserRequest $request, string $id)
+    {
+        $user = User::findOrFail($id);
 
-    //     $validated = $request->validated();
- 
-    //     $user->password = Hash::make($validated['password']);
-         
-    //     $user->save();
+        $validated = $request->validated();
 
-    //     return $user;
-    // }
+        $user->password = Hash::make($validated['password']);
+        
+        $user->save();
+
+        return $user;
+    }
 
     /**
      * Remove the specified resource from storage.
